@@ -1,4 +1,17 @@
 const Router = require('express').Router();
+var express = require('express');
+var body_parser = require('body-parser');
+
+
+Router.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+
+    next();
+});
+
 
 Router.post('/login', function(req, res){
   console.log('Llego algo');
@@ -7,7 +20,7 @@ Router.post('/login', function(req, res){
   //let user = req.body.user
   //let pas = req.body.pas
 
-  res.send({ hello: 'world' });
+  res.status(200).send("Validado");
 })
 //Obtiene todos los usuarios
 

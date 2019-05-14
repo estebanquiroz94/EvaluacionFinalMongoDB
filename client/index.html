@@ -24,11 +24,12 @@
         var pass = $('#pass')
         $('.loginButton').on('click', function(event) {
             if (nombreUsuario.val() != "" && pass.val() != "") {
-                $.post('http://localhost:8082/users/login',{user: nombreUsuario.val(), pass: pass.val()}, function(err, resp, body) {
+                $.post('http://localhost:8082/users/login',{user: nombreUsuario.val(), pass: pass.val()}, (resp, err) => {
                     if (resp == "Validado") {
-                        window.location.href = "http://localhost:3000/main.html"
+                        //window.location.href = "http://localhost:3000/main.html"
+                        window.location.href = "http://localhost/INERACTBD/ENTREGABLE_VMONGODB/client/main.html"
                     }else {
-                      alert("chimbo");
+                      alert("Usuario/Contraseña incorrectos");
                     }
                 })
 

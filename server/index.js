@@ -3,8 +3,8 @@ const  http = require('http'),
       path = require('path'), //Resolver rutas de archivos extaticos
       Routing = require('./rutas.js'),
       express = require('express'), //Crear aplicacion sobre el servidor http
-      bodyParser = require('body-parser') // Interpretar tipos de datos que viajan en el cuerpo de las peticiones
-    //  mongoose = require('mongoose') //Realizar conexion a BD
+      bodyParser = require('body-parser'), // Interpretar tipos de datos que viajan en el cuerpo de las peticiones
+      mongoose = require('mongoose') //Realizar conexion a BD
 
 //Puerto
 const PORT = 8082

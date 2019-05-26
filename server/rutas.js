@@ -17,8 +17,10 @@ Router.post('/login', function(req, res){
   console.log('Llego algo');
   console.log(req.body)
 
-  //let user = req.body.user
-  //let pas = req.body.pas
+  let user = req.body.user;
+  let pas = req.body.pas;
+
+  
 
   res.status(200).send("Validado");
 })

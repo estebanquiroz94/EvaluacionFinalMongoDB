@@ -26,5 +26,5 @@ app.use('/users', Routing)
 
 //Se ejecuta funcion linstener enviando el puerto y callback como argumentos
 Server.listen(PORT, function(){
-  console.log('El servidor se encuentra corriendo en el puerto indicado: '+PORT);
+  console.log('El servidor se encuentra corriendo en el puerto indicado: '+ PORT);
 })

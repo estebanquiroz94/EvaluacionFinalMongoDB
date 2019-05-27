@@ -1,5 +1,6 @@
 const Router = require('express').Router();
 var express = require('express');
+var Evento = require('/modelos/Evento')
 var body_parser = require('body-parser');
 
 
@@ -20,7 +21,24 @@ Router.post('/login', function(req, res){
   let user = req.body.user;
   let pas = req.body.pas;
 
-  
+  /*function getMarca(req, res){
+      var marcaId = req.params.id;
+
+      Marca.findById(marcaId,function(err,marca){
+          if(err){
+              res.status(500).send({message:"Error en la petición."});
+          }
+          else{
+              if(!marca){
+                  res.status(404).send({message:"La marca no existe."});
+              }
+              else{
+                  res.status(200).send({marca});
+              }
+          }
+      });
+  }*/
+
 
   res.status(200).send("Validado");
 })

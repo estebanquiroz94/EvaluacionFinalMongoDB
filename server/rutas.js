@@ -1,6 +1,7 @@
 const Router = require('express').Router();
 var express = require('express');
-var Evento = require('/modelos/Evento')
+var Evento = require('./modelos/evento');
+var Usuario = require('./modelos/usuarios');
 var body_parser = require('body-parser');
 
 
@@ -15,32 +16,29 @@ Router.use((req, res, next) => {
 
 
 Router.post('/login', function(req, res){
-  console.log('Llego algo');
   console.log(req.body)
 
   let user = req.body.user;
   let pas = req.body.pas;
-
-  /*function getMarca(req, res){
-      var marcaId = req.params.id;
-
-      Marca.findById(marcaId,function(err,marca){
+console.log('despues de variables');
+console.log('Antes de findOne');
+      Usuario.find({nombre : 'kkk'},function(err,evento){
           if(err){
-              res.status(500).send({message:"Error en la petición."});
+              console.log(err);
+              res.status(500).send("Error en la petición.");
           }
           else{
-              if(!marca){
-                  res.status(404).send({message:"La marca no existe."});
+              if(!evento){
+                  console.log('No existe ni forro');
+                  res.status(404).send("La marca no existe.");
               }
               else{
-                  res.status(200).send({marca});
+                  console.log('muerto por el culo');
+                  res.status(200).send("retorna el evento");
               }
           }
       });
-  }*/
-
-
-  res.status(200).send("Validado");
+  //res.status(200).send("Validado");
 })
 //Obtiene todos los usuarios
 

@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 //rutas
-/*var marca_routes = require('./routes/marca');
+var marca_routes = require('./routes/marca');
 var marcaRef_routes = require('./routes/marca_referencia');
 var usuario_routes = require('./routes/usuario');
 var pase_routes = require('./routes/pase');

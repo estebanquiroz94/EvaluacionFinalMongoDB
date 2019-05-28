@@ -11,4 +11,4 @@ var eventoSchema = schema({
     horaFin: String
 });
 
-module.exports = mongoose.model('Evento',eventosSchema);
+module.exports = mongoose.model('Evento',eventoSchema);

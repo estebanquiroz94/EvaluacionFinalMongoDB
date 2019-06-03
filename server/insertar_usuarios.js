@@ -3,9 +3,6 @@ const assert = require('assert');
 const url = 'mongodb://localhost:27017';
 const dbName = 'EvaluaciónFinal';
 
-//Importación de archivo con funcionalidad
-//var Operaciones = require('./create_users.js');
-
 //Establece la conexión a BD
 MongoClient.connect(url, function(err, client){
   if(err)
@@ -28,20 +25,4 @@ MongoClient.connect(url, function(err, client){
   ], (error, result) => {
     console.log("Resultado de insert: "+ result.toString())
   });
-
-  // Inserta registros
-  /*Operaciones.insertarRegistro(db, (error, result)=> {
-    if(error){
-      console.log("Error insertando los registros: "+error);
-    }
-  });*/
-
- //Elimina registros
-  /*Operaciones.eliminarRegistro(db, (error, client)=>{
-    if(error){console.log("Error eliminando esta mierda: "+error)}
-  })*/
-
-  /*Operaciones.consultarYActualizar(db, (error, result)=> {
-    if(error){console.log("Error ACTUALIZANDO los registros: "+error);}
-  });*/
 });

@@ -9,12 +9,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 //rutas
-var marca_routes = require('./routes/marca');
-var marcaRef_routes = require('./routes/marca_referencia');
-var usuario_routes = require('./routes/usuario');
-var pase_routes = require('./routes/pase');
-var vehiculo_routes = require('./routes/vehiculo');
-var alquiler_routes = require('./routes/alquiler');*/
+var loginRuta = require('./rutas/login');
+var eventoRuta = require('./rutas/evento');
 
 //configuracion de cabeceras
 app.use((req, res, next) => {
@@ -27,11 +23,7 @@ app.use((req, res, next) => {
 });
 
 //rutas base
-/*app.use('/api', marca_routes);
-app.use('/api', marcaRef_routes);
-app.use('/api', usuario_routes);
-app.use('/api', pase_routes);
-app.use('/api', vehiculo_routes);
-app.use('/api', alquiler_routes);*/
+app.use('/api', loginRuta);
+app.use('/api', eventoRuta);
 
 module.exports = app;

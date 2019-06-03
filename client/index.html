@@ -25,20 +25,30 @@
         $('.loginButton').on('click', function(event) {
           //http://localhost:8082/users/login
             if (nombreUsuario.val() != "" && pass.val() != "") {
-                $.post('http://localhost:3701/users/login',{user: nombreUsuario.val(), pass: pass.val()}, (resp, err) => {
-                  alert(resp);
-                    if (resp == "Validado") {
-                        //window.location.href = "http://localhost:3000/main.html"
-                        window.location.href = "http://localhost/INERACTBD/ENTREGABLE_VMONGODB/client/main.html"
-                    }else {
-                      alert("Usuario/Contraseña incorrectos");
-                    }
-                })
+              $.ajax({
+                url: "http://localhost:3701/api/login",
+                type: "GET",
+                data: {
+                  user: nombreUsuario.val(),
+                  pass: pass.val()
+                },
+                success : function(respuesta){
+                if(respuesta == "validado")
+                {
+                  window.location.href = "http://localhost/INERACTBD/ENTREGABLE_VMONGODB/client/main.html";
+                }else{
+                         alert("Usuario/Contraseña incorrectos");
+                }
+                },
+                error: function(err){
+                console.log(err);
+                }
+              });
 
             } else {
                 alert("Complete todos los campos")
             }
-        })
+        });
     </script>
   </body>
 </html>

@@ -4,11 +4,11 @@ var mongoose = require('mongoose');
 var schema = mongoose.Schema;
 
 var eventoSchema = schema({
-    nombreEvento: String,
-    fechaInicio: String,
-    fechaFin: String,
-    horaInicio: String,
-    horaFin: String
+    title: String,
+    start: String,
+    start_hour: String,
+    end: String,
+    end_hour: String
 });
 
-module.exports = mongoose.model('Evento',eventoSchema);
+module.exports = mongoose.model('Evento', eventoSchema);

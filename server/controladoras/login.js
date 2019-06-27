@@ -16,14 +16,12 @@ function validarIngreso(req, res){
         }
         else{
             if(!usuario){
-              console.log('No encontró informacion');
                 res.status(404).send({message:"El usuario no existe."});
             }
             else{
               if(usuario.length>0){
                 respuesta = "validado";
               }
-              console.log('Usuario validado correctamente');
                 res.status(200).send(respuesta);
             }
         }

@@ -8,7 +8,9 @@ var eventoSchema = schema({
     start: String,
     start_hour: String,
     end: String,
-    end_hour: String
+    end_hour: String,
+    all_day: String,
+    user: String,
 });
 
 module.exports = mongoose.model('Evento', eventoSchema);
